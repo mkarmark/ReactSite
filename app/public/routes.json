@@ -53,5 +53,9 @@
       "route": "/me",
       "serve": "/.auth/me"
     },
-  ] 
+  ],
+  "mimeTypes": 
+  {
+   ".svg": "application/json",
+  }
 } 
