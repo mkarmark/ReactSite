@@ -8,7 +8,7 @@ function Home() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to my test site! 1.0
+          Welcome to my test site! 2pm
         </p>
         <a
           className="App-link"
