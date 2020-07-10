@@ -54,8 +54,4 @@
       "serve": "/.auth/me"
     },
   ],
-  "mimeTypes": 
-  {
-   ".svg": "application/json",
-  }
 } 
