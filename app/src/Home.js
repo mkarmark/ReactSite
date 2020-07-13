@@ -26,7 +26,7 @@ function Home() {
           className="App-link"
           href="/.auth/login/facebook"
         >
-        Log in with Facebook
+        Log in with
         </a>
 
       </header>
