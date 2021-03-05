@@ -42,7 +42,7 @@
     }
   ],
   "navigationFallback": {
-    "rewrite": "/api/GetList",
+    "rewrite": "/index.html",
     "exclude": [ "*.{png}" ]
   },
   "responseErrorOverrides": {
