@@ -39,10 +39,6 @@
       "route": "/api/PostList",
       "methods": ["PUT", "POST"],
       "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/*",
-      "allowedRoles": ["admin"]
     }
   ],
   "navigationFallback": {
