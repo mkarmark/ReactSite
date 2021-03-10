@@ -9,8 +9,8 @@
       "rewrite": "/.auth/logout"
     },
     {
-      "route": "/foo1",
-      "redirect": "https://google.com/hi"
+      "route": "/login",
+      "rewrite": "/.auth/login/google"
     },
     {
       "route": "/bar",
@@ -39,6 +39,10 @@
       "route": "/api/PostList",
       "methods": ["PUT", "POST"],
       "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["admin"]
     }
   ],
   "navigationFallback": {
