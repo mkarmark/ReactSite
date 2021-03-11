@@ -10,7 +10,7 @@
     },
     {
       "route": "/login",
-      "rewrite": "/.auth/login/google"
+      "rewrite": "/.auth/login/facebook"
     },
     {
       "route": "/bar",
