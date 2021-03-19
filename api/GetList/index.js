@@ -8,7 +8,7 @@ module.exports = async function (context, req) {
     cookies: [
       {
         name: 'cookie1',
-        value: req.Query.Name
+        value: 'value1'
       },
       {
         name: 'cookie2',
