@@ -5,7 +5,7 @@
       "redirect": "https://www.google.com"
     },
     {
-      "route": "/logout1",
+      "route": "/logout2",
       "rewrite": "/.auth/logout"
     },
     {
