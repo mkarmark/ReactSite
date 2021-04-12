@@ -8,13 +8,16 @@ module.exports = async function (context, req) {
     }
     
     var cookieValue = "";
-    if (req.cookies && typeof req.cookies["testcookie"] === "undefined") {
+     const cookies = parse(req.headers.cookie);
+    context.log(JSON.stringify(cookies));
+    var sessionId = cookies.testcookie;
+    if (typeof sessionId === "undefined") {
         cookieValue = Math.random().toString(32).substring(2);
         appsettingValue = "houston we have a problem";
     }
     else
     {
-        cookieValue = req.cookies["testcookie"];
+        cookieValue = sessionId;
         appsettingValue = "all good";
     }
     
