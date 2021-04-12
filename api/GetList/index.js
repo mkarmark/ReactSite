@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
      const cookies = parse(req.headers.cookie);
     context.log(JSON.stringify(cookies));
     var sessionId = cookies.testcookie;
-    if (typeof sessionId === "undefined") {
+    if (!cookies.testcookie) {
         cookieValue = Math.random().toString(32).substring(2);
         appsettingValue = "houston we have a problem";
     }
