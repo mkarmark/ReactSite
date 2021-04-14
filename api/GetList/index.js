@@ -7,20 +7,6 @@ module.exports = async function (context, req) {
         appsettingValue = "[null]";
     }
     
-    var cookieValue = "";
-     const cookies = parse(req.headers.cookie);
-    context.log(JSON.stringify(cookies));
-    var sessionId = cookies.testcookie;
-    if (!cookies.testcookie) {
-        cookieValue = Math.random().toString(32).substring(2);
-        appsettingValue = "houston we have a problem";
-    }
-    else
-    {
-        cookieValue = sessionId;
-        appsettingValue = "all good";
-    }
-    
     context.res = {
         headers: { 'foobar': 'baz', 'bb':'cc'},
     // status: 200, /* Defaults to 200 */
@@ -33,11 +19,7 @@ module.exports = async function (context, req) {
       {
         name: 'cookie2',
         value: 'value2'
-      },
-        {
-            name: 'testcookie',
-            value: cookieValue
-        }
+      }
     ]
   }
 };
