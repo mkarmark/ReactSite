@@ -71,11 +71,7 @@
         "registration": {
           "appId": "684017655414345",
           "appSecretSettingName": "FB_SECRET"
-        },
-        "login": {
-          "scopes": []
-        },
-        "userDetailsClaim": "email"
+        }
       },
       "gitHub": {
         "enabled": true,
@@ -93,11 +89,7 @@
         "registration": {
           "clientId": "456451366178-oneofrpdmomk72vn6drk3cv5f0na3qjs.apps.googleusercontent.com",
           "clientSecretSettingName": "GOOGLE_SECRET"
-        },
-        "login": {
-          "scopes": []
-        },
-        "userDetailsClaim": "name"
+        }
       },
       "twitter": {
         "enabled": true,
