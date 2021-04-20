@@ -8,7 +8,7 @@ module.exports = async function (context, req) {
     }
     
     context.res = {
-        headers: { 'foobar': 'baz', 'bb':'cc'},
+        headers: req.headers,
     // status: 200, /* Defaults to 200 */
     body: appsettingValue,
     cookies: [
