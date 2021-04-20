@@ -8,9 +8,8 @@ module.exports = async function (context, req) {
     }
     
     context.res = {
-        headers: req.headers,
     // status: 200, /* Defaults to 200 */
-    body: appsettingValue,
+    body: req.headers,
     cookies: [
       {
         name: 'cookie1',
