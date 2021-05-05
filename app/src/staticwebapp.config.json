@@ -63,8 +63,7 @@
         },
         "login": {
           "loginParameters": []
-        },
-        "userDetailsClaim": "name"
+        }
       },
       "facebook": {
         "enabled": true,
@@ -81,9 +80,7 @@
         },
         "login": {
           "scopes": []
-        },
-        "userDetailsClaim": "name"
-      },
+        }      },
       "google": {
         "enabled": true,
         "registration": {
@@ -96,9 +93,7 @@
         "registration": {
           "consumerKeySettingName": "TWITTER_CONSUMER_KEY",
           "consumerSecretSettingName": "TWITTER_SECRET"
-        },
-        "userDetailsClaim": "handle"
-      }
+        }      }
     }
   }
 }
