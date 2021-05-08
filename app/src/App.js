@@ -11,8 +11,6 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import SubmitIceCreamPreference from './SubmitIceCreamPreference';
-
 
 class App extends React.Component {
   render() {
