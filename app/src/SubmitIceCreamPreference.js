@@ -18,7 +18,7 @@ class SubmitIceCreamPreference extends React.Component {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ iceCreamFlavor: iceCreamChoice })
+      body: JSON.stringify({ iceCreamFlavor: this.state.iceCreamChoice })
     };
     fetch("/api/PostIceCreamPreference", requestOptions)
       .then(val => {
