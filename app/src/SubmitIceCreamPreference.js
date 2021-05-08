@@ -1,6 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
-import axios from "axios";
-import Table from "./Table";
+import React from "react";
 import './App.css';
 
 class SubmitIceCreamPreference extends React.Component {
