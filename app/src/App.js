@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 // import Home from './Home';
 import IceCreamPreferences from './IceCreamPreferences';
+import SubmitIceCreamPreference from './SubmitIceCreamPreference';
 import ShoppingList from './ShoppingList';
 
 import {
@@ -10,6 +11,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import SubmitIceCreamPreference from './SubmitIceCreamPreference';
 
 
 class App extends React.Component {
@@ -19,6 +21,7 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route path="/" component={IceCreamPreferences} exact/>
+          <Route path="/vote" component={SubmitIceCreamPreference} exact/>
           <Route path="/shoppingList/" component={ShoppingList}/>
         </Switch>
       </div>
