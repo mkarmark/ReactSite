@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from './Home';
+import IceCreamPreferences from './IceCreamPreferences';
 import ShoppingList from './ShoppingList';
 
 import {
@@ -17,7 +18,7 @@ class App extends React.Component {
       <Router>
       <div>
         <Switch>
-          <Route path="/" component={Home} exact/>
+          <Route path="/" component={IceCreamPreferences} exact/>
           <Route path="/shoppingList/" component={ShoppingList}/>
         </Switch>
       </div>
