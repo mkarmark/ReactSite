@@ -25,7 +25,6 @@ class SubmitIceCreamPreference extends React.Component {
       .then(val => {
         this.props.history.push("/")
       });
-      this.render();
   }
 
   handleChange(event) {
