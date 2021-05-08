@@ -8,7 +8,7 @@ class SubmitIceCreamPreference extends React.Component {
     super(props);
     this.state = {
       iceCreamChoice: "",
-      isSubmitted = false
+      isSubmitted: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,7 +19,7 @@ class SubmitIceCreamPreference extends React.Component {
   {
     this.setState({
       iceCreamChoice: this.state.iceCreamChoice,
-      isSubmitted = true
+      isSubmitted: true
     })
 
     const requestOptions = {
@@ -36,7 +36,7 @@ class SubmitIceCreamPreference extends React.Component {
   handleChange(event) {
     this.setState({
       iceCreamChoice: event.target.value,
-      isSubmitted = this.state.isSubmitted
+      isSubmitted: this.state.isSubmitted
     })
   }
 
