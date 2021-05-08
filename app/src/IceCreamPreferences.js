@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
+import axios from "axios";
 import Table from "./Table";
 import './App.css';
 
@@ -32,7 +33,7 @@ function IceCreamPreferences() {
     useEffect(() => {
       async function getData() {
         await axios
-          .get("https://covidtracking.com/api/v1/states/current.json")
+          .get("/api/GetIceCreamPreferences")
           .then((response) => {
             // check if the data is populated
             console.log(response.data);
