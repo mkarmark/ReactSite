@@ -1,5 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
-import logo from './logo.svg';
+import React, { useMemo } from "react";
 import Table from "./Table";
 import './App.css';
 
