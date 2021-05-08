@@ -1,4 +1,6 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
+
 import './App.css';
 
 class SubmitIceCreamPreference extends React.Component {
@@ -48,4 +50,4 @@ class SubmitIceCreamPreference extends React.Component {
   }
 }
 
-export default SubmitIceCreamPreference;
+export default withRouter(SubmitIceCreamPreference);
