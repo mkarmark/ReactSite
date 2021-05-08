@@ -50,11 +50,13 @@ function IceCreamPreferences() {
 
   return (
     <div className="App">
-      {loadingData ? (
-        <p>Loading Please wait...</p>
-      ) : (
-        <Table columns={columns} data={data} />
-      )}
+      <header className="App-header">
+        {loadingData ? (
+          <p>Loading Please wait...</p>
+        ) : (
+          <Table columns={columns} data={data} />
+        )}
+      </header>
     </div>      
   );
 }

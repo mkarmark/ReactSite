@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import './App.css';
 
@@ -44,11 +44,6 @@ class SubmitIceCreamPreference extends React.Component {
   {
     return (
       <div className="App">
-        <Link to="/">
-          <button>
-            See results
-          </button>
-        </Link>
         {
           this.state.isSubmitted ?
           (<p>Thanks for submitting your vote!</p>) :
