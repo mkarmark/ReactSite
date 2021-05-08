@@ -46,7 +46,7 @@ function IceCreamPreferences() {
         // if the result is not ready so you make the axios call
         getData();
       }
-    }, []);  
+    }, [loadingData, setData, setLoadingData]);  
 
   return (
     <div className="App">
