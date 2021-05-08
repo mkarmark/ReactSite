@@ -44,6 +44,7 @@ class SubmitIceCreamPreference extends React.Component {
   {
     return (
       <div className="App">
+        <header className="App-header">
         {
           this.state.isSubmitted ?
           (<p>Thanks for submitting your vote!</p>) :
@@ -55,7 +56,7 @@ class SubmitIceCreamPreference extends React.Component {
             <input type="submit" value="Submit" />
           </form>)
         }
-        
+        </header>
       </div>      
     );
   }

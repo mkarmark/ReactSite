@@ -51,6 +51,7 @@ function IceCreamPreferences() {
   return (
     <div className="App">
       <header className="App-header">
+      <img src="https://media.timeout.com/images/105680295/image.jpg" alt="" width="300" />
         {loadingData ? (
           <p>Loading Please wait...</p>
         ) : (
