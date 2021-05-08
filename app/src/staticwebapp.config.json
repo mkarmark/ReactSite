@@ -36,7 +36,7 @@
       "redirect": "/.auth/me"
     },
     {
-      "route": "/api/PostList",
+      "route": "/api/*",
       "methods": ["PUT", "POST"],
       "allowedRoles": ["authenticated"]
     }
