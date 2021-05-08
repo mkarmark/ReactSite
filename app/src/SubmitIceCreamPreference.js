@@ -8,6 +8,7 @@ class SubmitIceCreamPreference extends React.Component {
       iceCreamChoice: ""
     }
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleAddSubmit = this.handleAddSubmit.bind(this);
   }
 
@@ -25,6 +26,12 @@ class SubmitIceCreamPreference extends React.Component {
       this.render();
   }
 
+  handleChange(event) {
+    this.setState({
+      iceCreamChoice: event.target.value
+    })
+  }
+
   render() 
   {
     return (
@@ -32,7 +39,7 @@ class SubmitIceCreamPreference extends React.Component {
         <form onSubmit={this.handleAddSubmit}>
           <label>
             Enter your favorite ice cream flavor here:
-            <input type="text" value={this.state.iceCreamChoice}/>
+            <input type="text" value={this.state.iceCreamChoice} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
