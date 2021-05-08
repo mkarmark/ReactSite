@@ -7,7 +7,8 @@ class SubmitIceCreamPreference extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      iceCreamChoice: ""
+      iceCreamChoice: "",
+      isSubmitted = false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -16,6 +17,11 @@ class SubmitIceCreamPreference extends React.Component {
 
   handleAddSubmit()
   {
+    this.setState({
+      iceCreamChoice: this.state.iceCreamChoice,
+      isSubmitted = true
+    })
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -29,7 +35,8 @@ class SubmitIceCreamPreference extends React.Component {
 
   handleChange(event) {
     this.setState({
-      iceCreamChoice: event.target.value
+      iceCreamChoice: event.target.value,
+      isSubmitted = this.state.isSubmitted
     })
   }
 
@@ -37,13 +44,23 @@ class SubmitIceCreamPreference extends React.Component {
   {
     return (
       <div className="App">
-        <form onSubmit={this.handleAddSubmit}>
-          <label>
-            Enter your favorite ice cream flavor here:
-            <input type="text" value={this.state.iceCreamChoice} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        <Link to="/">
+          <button>
+            See results
+          </button>
+        </Link>
+        {
+          this.state.isSubmitted ?
+          (<p>Thanks for submitting your vote!</p>) :
+          (<form onSubmit={this.handleAddSubmit}>
+            <label>
+              Enter your favorite ice cream flavor here:
+              <input type="text" value={this.state.iceCreamChoice} onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>)
+        }
+        
       </div>      
     );
   }
