@@ -14,11 +14,11 @@ function IceCreamPreferences() {
           columns: [
             {
               Header: "Flavor",
-              accessor: "show.flavor"
+              accessor: "flavor"
             },
             {
               Header: "# of votes",
-              accessor: "show.count"
+              accessor: "count"
             }
           ]
         }
