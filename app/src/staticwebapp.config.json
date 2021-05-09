@@ -25,7 +25,7 @@
   "navigationFallback": {
     "rewrite": "/index.html"
   },
-  "responseErrorOverrides": {
+  "responseOverrides": {
     "401": {
       "redirect": "/login"
     }
