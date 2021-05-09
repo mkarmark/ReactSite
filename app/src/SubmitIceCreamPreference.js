@@ -9,7 +9,8 @@ class SubmitIceCreamPreference extends React.Component {
     this.state = {
       iceCreamChoice: "",
       isSubmitted: false,
-      isLoaded: false
+      isLoaded: false,
+      isVoteAlreadyCast: false
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,7 +23,8 @@ class SubmitIceCreamPreference extends React.Component {
         {
           iceCreamChoice: "",
           isSubmitted: false,
-          isLoaded: true
+          isLoaded: true,
+          isVoteAlreadyCast: response
         }));
 
     this.render();
@@ -33,7 +35,8 @@ class SubmitIceCreamPreference extends React.Component {
     this.setState({
       iceCreamChoice: this.state.iceCreamChoice,
       isSubmitted: true,
-      isLoaded: this.state.isLoaded
+      isLoaded: this.state.isLoaded,
+      isVoteAlreadyCast: this.state.isVoteAlreadyCast
     })
 
     const requestOptions = {
@@ -51,7 +54,8 @@ class SubmitIceCreamPreference extends React.Component {
     this.setState({
       iceCreamChoice: event.target.value,
       isSubmitted: this.state.isSubmitted,
-      isLoaded: this.state.isLoaded
+      isLoaded: this.state.isLoaded,
+      isVoteAlreadyCast: this.state.isVoteAlreadyCast
     })
   }
 
@@ -65,7 +69,12 @@ class SubmitIceCreamPreference extends React.Component {
           (
             <p>Loading Please wait...</p>
           )
-          : (this.state.isSubmitted ?
+          : (this.state.isVoteAlreadyCast ?
+            (
+              <p>We have already received your vote! Thanks for participating!</p>
+            )
+            :
+            (this.state.isSubmitted ?
           (<p>Thanks for submitting your vote!</p>) :
           (<form onSubmit={this.handleAddSubmit}>
             <label>
@@ -73,7 +82,7 @@ class SubmitIceCreamPreference extends React.Component {
               <input type="text" value={this.state.iceCreamChoice} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
-          </form>))
+          </form>)))
         }
         </header>
       </div>      
