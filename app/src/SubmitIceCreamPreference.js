@@ -24,7 +24,7 @@ class SubmitIceCreamPreference extends React.Component {
           iceCreamChoice: "",
           isSubmitted: false,
           isLoaded: true,
-          isVoteAlreadyCast: response === "True"
+          isVoteAlreadyCast: response.toString() == "True"
         }));
 
     this.render();
