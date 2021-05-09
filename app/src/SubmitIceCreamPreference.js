@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from 'react-router-dom';
 
 import './App.css';
@@ -8,18 +8,31 @@ class SubmitIceCreamPreference extends React.Component {
     super(props);
     this.state = {
       iceCreamChoice: "",
-      isSubmitted: false
+      isSubmitted: false,
+      isLoaded: false
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleAddSubmit = this.handleAddSubmit.bind(this);
   }
 
+  componentDidMount() {
+    fetch("/api/GetHasUserSubmittedTheirVote")
+      .then(response => response.json())
+      .then(data => this.setState(
+        {
+          iceCreamChoice: "",
+          isSubmitted: false,
+          isLoaded: true
+        }));
+  }
+
   handleAddSubmit()
   {
     this.setState({
       iceCreamChoice: this.state.iceCreamChoice,
-      isSubmitted: true
+      isSubmitted: true,
+      isLoaded: this.state.isLoaded
     })
 
     const requestOptions = {
@@ -36,7 +49,8 @@ class SubmitIceCreamPreference extends React.Component {
   handleChange(event) {
     this.setState({
       iceCreamChoice: event.target.value,
-      isSubmitted: this.state.isSubmitted
+      isSubmitted: this.state.isSubmitted,
+      isLoaded: this.state.isLoaded
     })
   }
 
@@ -46,7 +60,11 @@ class SubmitIceCreamPreference extends React.Component {
       <div className="App">
         <header className="App-header">
         {
-          this.state.isSubmitted ?
+          !this.state.isLoaded ?
+          (
+            <p>Loading Please wait...</p>
+          )
+          : (this.state.isSubmitted ?
           (<p>Thanks for submitting your vote!</p>) :
           (<form onSubmit={this.handleAddSubmit}>
             <label>
@@ -54,7 +72,7 @@ class SubmitIceCreamPreference extends React.Component {
               <input type="text" value={this.state.iceCreamChoice} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
-          </form>)
+          </form>))
         }
         </header>
       </div>      

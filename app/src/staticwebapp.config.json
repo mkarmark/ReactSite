@@ -5,12 +5,12 @@
       "redirect": "https://www.google.com"
     },
     {
-      "route": "/logout2",
+      "route": "/logout",
       "rewrite": "/.auth/logout"
     },
     {
       "route": "/login",
-      "rewrite": "/.auth/login/google"
+      "rewrite": "/.auth/login/aad"
     },
     {
       "route": "/bar",
@@ -34,6 +34,14 @@
     {
       "route": "/me",
       "redirect": "/.auth/me"
+    },
+    {
+      "route": "/vote",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/GetHasUserSubmittedTheirVote",
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/api/*",
