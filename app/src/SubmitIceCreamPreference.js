@@ -18,8 +18,7 @@ class SubmitIceCreamPreference extends React.Component {
 
   componentDidMount() {
     fetch("/api/GetHasUserSubmittedTheirVote")
-      .then(response => response.json())
-      .then(data => this.setState(
+      .then(response => this.setState(
         {
           iceCreamChoice: "",
           isSubmitted: false,
