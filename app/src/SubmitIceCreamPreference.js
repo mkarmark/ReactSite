@@ -24,7 +24,7 @@ class SubmitIceCreamPreference extends React.Component {
           iceCreamChoice: "",
           isSubmitted: false,
           isLoaded: true,
-          isVoteAlreadyCast: JSON.parse(JSON.stringify("{ isVoteAlreadyCast: " + response + " }")).isVoteAlreadyCast
+          isVoteAlreadyCast: response
         }));
 
     this.render();
@@ -73,7 +73,7 @@ class SubmitIceCreamPreference extends React.Component {
             (
               <div>
               <p>We have already received your vote! Thanks for participating!</p>
-              <p>this.state.isVoteAlreadyCast</p></div>
+              <p>{this.state.isVoteAlreadyCast}</p></div>
             )
             :
             (this.state.isSubmitted ?
