@@ -6,7 +6,7 @@
     },
     {
       "route": "/login",
-      "rewrite": "/.auth/login/aad"
+      "rewrite": "/.auth/login/aad?post_login_redirect_uri=/vote"
     },
     {
       "route": "/vote",
