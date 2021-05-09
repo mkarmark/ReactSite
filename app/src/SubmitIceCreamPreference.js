@@ -78,13 +78,16 @@ class SubmitIceCreamPreference extends React.Component {
             :
             (this.state.isSubmitted ?
           (<p>Thanks for submitting your vote!</p>) :
-          (<form onSubmit={this.handleAddSubmit}>
+          (<div>
+            <p>this.state.isVoteAlreadyCast</p>
+            <form onSubmit={this.handleAddSubmit}>
             <label>
               Enter your favorite ice cream flavor here:
               <input type="text" value={this.state.iceCreamChoice} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
-          </form>)))
+          </form>
+            </div>)))
         }
         </header>
       </div>      
