@@ -55,7 +55,17 @@ function IceCreamPreferences() {
         {loadingData ? (
           <p>Loading Please wait...</p>
         ) : (
-          <Table columns={columns} data={data} />
+          <div>
+        <Table columns={columns} data={data} />
+                  <br/>
+                  <a 
+                  className="App-link"
+                  href="/vote"
+                >
+                  Vote for your ice cream flavor!!
+                </a>
+          </div>
+          
         )}
       </header>
     </div>      

@@ -1,9 +1,5 @@
 { 
-  "routes": [ 
-    {
-      "route": "/*.jpg",
-      "redirect": "https://www.google.com"
-    },
+  "routes": [
     {
       "route": "/logout",
       "rewrite": "/.auth/logout"
@@ -11,29 +7,6 @@
     {
       "route": "/login",
       "rewrite": "/.auth/login/aad"
-    },
-    {
-      "route": "/bar",
-      "statusCode": "301",
-      "allowedRoles": ["admin"],
-      "redirect": "/about"
-    },
-    {
-      "route": "/baz",
-      "redirect": "/about"
-    },
-    {
-      "route": "/about/*",
-      "allowedRoles": ["authenticated", "admin"],
-      "rewrite": "/about"
-    },
-    {
-      "route": "/admin",
-      "rewrite": "/admin"
-    },
-    {
-      "route": "/me",
-      "redirect": "/.auth/me"
     },
     {
       "route": "/vote",
@@ -50,16 +23,13 @@
     }
   ],
   "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": [ "*.{png}" ]
+    "rewrite": "/index.html"
   },
   "responseErrorOverrides": {
-    "404": {
+    "401": {
+      "redirect": "/login"
     }
   },
-  "mimeTypes": { ".jpg": "application/json" },
-  "globalHeaders": {
-  "a": "b" },
   "auth": {
     "identityProviders": {
       "azureActiveDirectory": {
@@ -69,36 +39,7 @@
           "clientId": "cf978515-3bd2-4632-9a88-84610d244ada",
           "clientSecretSettingName": "AAD_SECRET"
         }
-      },
-      "facebook": {
-        "enabled": true,
-        "registration": {
-          "appId": "684017655414345",
-          "appSecretSettingName": "FB_SECRET"
-        }
-      },
-      "gitHub": {
-        "enabled": true,
-        "registration": {
-          "clientId": "bd5bf1b4c2c1abdcc1db",
-          "clientSecretSettingName": "GITHUB_SECRET"
-        },
-        "login": {
-          "scopes": []
-        }      },
-      "google": {
-        "enabled": true,
-        "registration": {
-          "clientId": "456451366178-oneofrpdmomk72vn6drk3cv5f0na3qjs.apps.googleusercontent.com",
-          "clientSecretSettingName": "GOOGLE_SECRET"
-        }
-      },
-      "twitter": {
-        "enabled": true,
-        "registration": {
-          "consumerKeySettingName": "TWITTER_CONSUMER_KEY",
-          "consumerSecretSettingName": "TWITTER_SECRET"
-        }      }
+      }
     }
   }
 }
