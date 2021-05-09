@@ -25,6 +25,8 @@ class SubmitIceCreamPreference extends React.Component {
           isSubmitted: false,
           isLoaded: true
         }));
+
+    this.render();
   }
 
   handleAddSubmit()
