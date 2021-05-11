@@ -13,10 +13,6 @@
       "allowedRoles": ["authenticated"]
     },
     {
-      "route": "/api/GetHasUserSubmittedTheirVote",
-      "allowedRoles": ["authenticated"]
-    },
-    {
       "route": "/api/*",
       "methods": ["PUT", "POST"],
       "allowedRoles": ["authenticated"]
@@ -25,11 +21,6 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/api/*"]
-  },
-  "responseOverrides": {
-    "401": {
-      "redirect": "/login"
-    }
   },
   "auth": {
     "identityProviders": {
