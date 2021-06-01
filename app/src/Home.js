@@ -10,17 +10,11 @@ function Home() {
         <p>
           Welcome to my site! Last updated 4/12/21 12:57pm
         </p>
-        <a
-          className="App-link"
-          href="/shoppingList"
-        >
-          Let's try some functions!
-        </a>
         <a 
           className="App-link"
-          href="/about/"
+          href="/recipes/"
         >
-        Gated content
+        Gated function content
         </a>
 		        <a 
           className="App-link"

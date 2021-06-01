@@ -6,15 +6,15 @@
     },
     {
       "route": "/login",
-      "rewrite": "/.auth/login/aad?post_login_redirect_uri=/vote"
+      "rewrite": "/.auth/login/aad"
     },
     {
-      "route": "/vote",
+      "route": "/recipes",
       "allowedRoles": ["authenticated"]
     },
     {
       "route": "/api/*",
-      "methods": ["PUT", "POST"],
+      "methods": ["GET", "POST"],
       "allowedRoles": ["authenticated"]
     }
   ],
