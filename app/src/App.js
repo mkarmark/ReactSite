@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from './Home';
 // import IceCreamPreferences from './IceCreamPreferences';
-import SubmitIceCreamPreference from './SubmitIceCreamPreference';
+// import SubmitIceCreamPreference from './SubmitIceCreamPreference';
 import ShoppingList from './ShoppingList';
 
 import {
