@@ -9,7 +9,7 @@ class ShoppingList extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/api/PostList", {method: "post"})
+    fetch("/api/GetList")
       .then(response => {
         return response.json()
       })
@@ -24,18 +24,19 @@ class ShoppingList extends React.Component {
   render() {
     const { loading, fetchedData } = this.state
     return (
-    <div className="App">
+      <div className="App">
       <header className="App-header">
-      <h1>Shopping List</h1>
+      <h1>JAM Recipes</h1>
         {loading ? (
-          <p>Searching for items ..... </p>
+          <p>Searching for recipes ..... </p>
 		) : 
 		(
-          fetchedData.map(shoppingItem => (
+          fetchedData.map(recipe => (
 			<div class="row marketing">
 				<div class="col">
-				  <h2>{JSON.stringify(shoppingItem)} </h2>
-		  		<br/><br/>
+				  <h2><a className="App-link" href={recipe.url}>{recipe.name}</a></h2>
+				  <h3>Makes {recipe.quantity}</h3>
+				  <img src={recipe.image} alt="" width="300" />
 				</div>
 			</div>
 			)
