@@ -27,8 +27,28 @@
       "azureActiveDirectory": {
         "enabled": true,
         "registration": {
-          "openIdIssuer": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/v2.0",
-          "clientId": "cf978515-3bd2-4632-9a88-84610d244ada"
+          "openIdIssuer": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47",
+          "clientId": "cf978515-3bd2-4632-9a88-84610d244ada",
+          "clientSecretSettingName": "AAD_SECRET"
+        }
+      },
+      "customOpenIdConnectProviders": {
+        "azacdr": {
+          "registration": {
+            "clientId": "cf978515-3bd2-4632-9a88-84610d244ada",
+            "clientCredential": {
+              "clientSecretSettingName": "AAD_SECRET"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+              "scopes": [
+              "openid profile email"
+            ],
+                "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+          }
         }
       }
     }
